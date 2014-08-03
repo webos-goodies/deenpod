@@ -1,0 +1,37 @@
+html { overflow:hidden; }
+body {
+    margin:0; padding:0;
+    -webkit-text-size-adjust:none;
+    -ms-text-size-adjust:none;
+    -moz-text-size-adjust:none;
+}
+a { color:#15c; text-decoration:none; }
+
+.deenpod { position:fixed; left:0; right:0; top:0; bottom:0; font-size:14px; }
+
+.deenpod-control { padding:16px; }
+.deenpod audio { display:block;  width:100%; }
+
+.deenpod-playlist-outer { position:absolute; left:0; right:0; top:0; bottom:32px;
+                          overflow:auto; -webkit-overflow-scrolling:touch; }
+.deenpod-playlist { margin:0; padding:0; }
+.deenpod-song {
+    line-height:48px;
+    margin:0;
+    padding:0 0 0 48px;
+    border-top:solid 1px white;
+    border-bottom:solid 1px #eee;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    background:16px center no-repeat;
+}
+.deenpod-song:nth-child(odd) { background-color:#f0f4f8; }
+.deenpod-play .deenpod-song.selected { background-image:url(play.svg); }
+.deenpod-pause .deenpod-song.selected { background-image:url(pause.svg); }
+
+.deenpod-foot { position:absolute; left:0; right:0; bottom:0; height:32px; background:#eee; }
+.deenpod-foot a { position:absolute; right:0; top:0; height:100%; padding:0 16px 0 0;
+                  font-size:12px; line-height:32px; }
+.deenpod-note { position:absolute; left:0; top:0; height:100%; padding:0 0 0 16px;
+                color:#844; font-size:10px; line-height:32px; }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="deenPodApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-title" content="Feedeen Podcast Player">
+  <title>Feedeen Podcast Player</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="player.css" type="text/css">
+  <script src="angular.min.js"></script>
+  <script src="player.js"></script>
+  <style>@-ms-viewport { width: device-width; }</style>
+</head>
+<body>
+  <div class="deenpod" ng-controller="PlayerController">
+    <div class="deenpod-control"><audio controls="controls"></audio></div>
+    <div class="deenpod-playlist-outer">
+      <ul ng-class="'deenpod-' + status" class="deenpod-playlist">
+        <li ng-repeat="song in playlist" ng-click="onClickSong(song.url)"
+            class="deenpod-song" ng-class="song.url == currentUrl ? 'selected' : ''">
+          {{song.title}}
+        </li>
+      </ul>
+    </div>
+    <div class="deenpod-foot">
+      <span class="deenpod-note">※このページは暗号化されていません</span>
+      <a href="" ng-click="onClickClearPlaylist()">リストをクリア</a>
+    </div>
+</body>
+</html>
