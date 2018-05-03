@@ -61,6 +61,7 @@ deenPodApp.controller('PlayerController', function($scope, $element) {
   $scope.currentUrl = null;
   $scope.playlist   = [];
   $scope.status     = 'pause';
+  $scope.ssl        = location.protocol == 'https:';
 
   $scope.onClickSong = function(url) {
     if($scope.currentUrl != url) {
